@@ -3,7 +3,7 @@
 "AVCCUSBHS","26","USBHS0_AVCCUSBHS","","","","","","",""
 "AVSS0","156","ADC_AVSS0","","","","","","",""
 "AVSSUSBHS","28","USBHS0_AVSSUSBHS","","","","","","",""
-"P000","169","ADC0_AN00","GPIO29","","","Analog mode","","","ADC0: AN00
+"P000","169","ADC0_AN00","","","","Analog mode","","","ADC0: AN00
 CMP0: IVCMP2
 IRQ0: IRQ06"
 "P001","168","ADC0_AN01","GPIO28","","","Analog mode","","","ADC0: AN01

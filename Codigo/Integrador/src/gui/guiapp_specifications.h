@@ -6,7 +6,7 @@
 /*  www.expresslogic.com.                                                      */
 /*                                                                             */
 /*  GUIX Studio Revision 5.4.2.9                                               */
-/*  Date (dd.mm.yyyy): 18. 7.2019   Time (hh:mm): 19:06                        */
+/*  Date (dd.mm.yyyy): 18. 7.2019   Time (hh:mm): 19:47                        */
 /*******************************************************************************/
 
 

@@ -847,7 +847,6 @@
   <v1:propertySetting propertyId="p300.symbolic_name" value="JTAG_TCK"/>
   <v1:propertySetting propertyId="pb00.symbolic_name" value="USB_High_Speed_USBHS_VBUSEN"/>
   <v1:propertySetting propertyId="p605.symbolic_name" value="GPIO1"/>
-  <v1:propertySetting propertyId="p000.symbolic_name" value="GPIO29"/>
   <v1:propertySetting propertyId="p111.symbolic_name" value="GPIO4"/>
   <v1:propertySetting propertyId="p704.symbolic_name" value="Ethernet_Controller_1_RMII_RMII1_RX_ER"/>
   <v1:propertySetting propertyId="p506.symbolic_name" value="GPIO16"/>
