@@ -3,9 +3,12 @@
 #include "mainTick.h"
 #define C_FILTER_ORDER  8
 
+UINT status;
+uint16_t SendBuffer[1]={0};
 uint16_t u16ADC_Data;
 uint16_t u16ADC_Filtered;
 uint16_t u16Volts;
+
 
 /* ADC Thread entry function */
 void adc_tread_entry(void)
@@ -37,7 +40,10 @@ void adc_tread_entry(void)
                       u16ADC_Filtered = u16ADC_Data;
                     }
 
-                u16Volts = ((uint16_t)((uint32_t)(1294 * u16ADC_Filtered) / 100));
+                u16Volts = ((uint16_t)((uint32_t)(1294 * u16ADC_Filtered) / 1000));
+
+                SendBuffer[0]=u16Volts;
+                status=tx_queue_send (&adc,SendBuffer,TX_NO_WAIT);
 
               }
 

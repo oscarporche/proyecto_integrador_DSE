@@ -27,6 +27,7 @@ extern const adc_instance_t g_adc0;
 #ifndef NULL
 void NULL(adc_callback_args_t *p_args);
 #endif
+extern TX_QUEUE adc;
 #ifdef __cplusplus
 } /* extern "C" */
 #endif
