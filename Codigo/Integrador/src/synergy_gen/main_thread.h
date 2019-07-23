@@ -9,6 +9,8 @@ extern "C" void main_thread_entry(void);
 #else
 extern void main_thread_entry(void);
 #endif
+#include "r_gpt.h"
+#include "r_timer_api.h"
 #include "r_dtc.h"
 #include "r_transfer_api.h"
 #include "r_sci_spi.h"
@@ -23,6 +25,11 @@ extern void main_thread_entry(void);
 #ifdef __cplusplus
 extern "C"
 {
+#endif
+/** Timer on GPT Instance. */
+extern const timer_instance_t g_timer2;
+#ifndef update_screen
+void update_screen(timer_callback_args_t *p_args);
 #endif
 /* Transfer on DTC Instance. */
 extern const transfer_instance_t g_transfer3;

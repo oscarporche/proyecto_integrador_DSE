@@ -1846,7 +1846,7 @@
 <id_name>ID_WINDOW1_NOMBRES</id_name>
 <template>FALSE</template>
 <visible_at_startup>FALSE</visible_at_startup>
-<string_id>NOMBRE2</string_id>
+<string_id>NOMBRE1</string_id>
 <font_id>PROMPT</font_id>
 <normal_text_color>TEXT</normal_text_color>
 <selected_text_color>TEXT</selected_text_color>

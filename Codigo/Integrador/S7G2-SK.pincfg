@@ -735,7 +735,6 @@
   <v1:propertySetting propertyId="pa00.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_DATA05_B"/>
   <v1:propertySetting propertyId="p901.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_DATA15_B"/>
   <v1:propertySetting propertyId="p415.symbolic_name" value="Cap_Touch_Sensing_Unit_TS11"/>
-  <v1:propertySetting propertyId="p400.symbolic_name" value="GPIO10"/>
   <v1:propertySetting propertyId="p606.symbolic_name" value="GLCD_Controller__Pin_Option_B_LCD_DATA03_B"/>
   <v1:propertySetting propertyId="p306.symbolic_name" value="SCI6_SCK6"/>
   <v1:propertySetting propertyId="p706.symbolic_name" value="SCI3_RXD3_SCL3_MISO3"/>
@@ -860,4 +859,8 @@
   <v1:configSetting configurationId="gpt1.mode" altId="gpt1.mode.gtiocaorgtiocb.free"/>
   <v1:configSetting configurationId="gpt2.gtioca" altId="gpt2.gtioca.none"/>
   <v1:configSetting configurationId="gpt2.gtiocb" altId="gpt2.gtiocb.none"/>
+  <v1:configSetting configurationId="irq0.irq02" altId="irq0.irq02.none"/>
+  <v1:configSetting configurationId="irq0.irq01" altId="irq0.irq01.none"/>
+  <v1:configSetting configurationId="p400.gpio_pupd" altId="p400.gpio_pupd.gpio_pupd_ip_up"/>
+  <v1:configSetting configurationId="irq0.mode" altId="irq0.mode.disabled"/>
 </v1:pinSettings>

@@ -82,6 +82,8 @@ src/pwm_thread_entry.o: ../src/pwm_thread_entry.c \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_gpt.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_timer_api.h \
+ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_icu.h \
+ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_external_irq_api.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/adc_tread.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_adc.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
@@ -254,6 +256,10 @@ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_a
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_gpt.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_timer_api.h:
+
+C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_icu.h:
+
+C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_external_irq_api.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/adc_tread.h:
 
