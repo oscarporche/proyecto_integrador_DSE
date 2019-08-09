@@ -32,6 +32,7 @@ extern const timer_instance_t g_timer1;
 #ifndef NULL
 void NULL(timer_callback_args_t *p_args);
 #endif
+extern TX_QUEUE datadisplay;
 #ifdef __cplusplus
 } /* extern "C" */
 #endif

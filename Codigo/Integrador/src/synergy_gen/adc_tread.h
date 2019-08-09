@@ -19,8 +19,8 @@ extern "C"
 #endif
 /** Timer on GPT Instance. */
 extern const timer_instance_t g_timer0;
-#ifndef NULL
-void NULL(timer_callback_args_t *p_args);
+#ifndef filter_adc
+void filter_adc(timer_callback_args_t *p_args);
 #endif
 /** ADC on ADC Instance. */
 extern const adc_instance_t g_adc0;

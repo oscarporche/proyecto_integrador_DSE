@@ -20,8 +20,8 @@ static const timer_on_gpt_cfg_t g_timer3_extend =
   { .output_enabled = false, .stop_level = GPT_PIN_LEVEL_LOW },
   .shortest_pwm_signal = GPT_SHORTEST_LEVEL_OFF, };
 static const timer_cfg_t g_timer3_cfg =
-{ .mode = TIMER_MODE_PERIODIC, .period = 10, .unit = TIMER_UNIT_PERIOD_MSEC, .duty_cycle = 50, .duty_cycle_unit =
-          TIMER_PWM_UNIT_RAW_COUNTS,
+{ .mode = TIMER_MODE_PERIODIC, .period = 25, .unit = TIMER_UNIT_PERIOD_MSEC, .duty_cycle = 50, .duty_cycle_unit =
+          TIMER_PWM_UNIT_PERCENT,
   .channel = 3, .autostart = true, .p_callback = RPMS, .p_context = &g_timer3, .p_extend = &g_timer3_extend, .irq_ipl =
           (3), };
 /* Instance structure to use this module. */
@@ -35,7 +35,7 @@ SSP_VECTOR_DEFINE( icu_irq_isr, ICU, IRQ0);
 static icu_instance_ctrl_t g_external_irq0_ctrl;
 static const external_irq_cfg_t g_external_irq0_cfg =
 { .channel = 0,
-  .trigger = EXTERNAL_IRQ_TRIG_FALLING,
+  .trigger = EXTERNAL_IRQ_TRIG_BOTH_EDGE,
   .filter_enable = true,
   .pclk_div = EXTERNAL_IRQ_PCLK_DIV_BY_64,
   .autostart = true,
@@ -60,12 +60,14 @@ static const timer_on_gpt_cfg_t g_timer1_extend =
   .shortest_pwm_signal = GPT_SHORTEST_LEVEL_OFF, };
 static const timer_cfg_t g_timer1_cfg =
 { .mode = TIMER_MODE_PWM, .period = 1, .unit = TIMER_UNIT_PERIOD_MSEC, .duty_cycle = 50, .duty_cycle_unit =
-          TIMER_PWM_UNIT_RAW_COUNTS,
+          TIMER_PWM_UNIT_PERCENT_X_1000,
   .channel = 1, .autostart = true, .p_callback = NULL, .p_context = &g_timer1, .p_extend = &g_timer1_extend, .irq_ipl =
           (BSP_IRQ_DISABLED), };
 /* Instance structure to use this module. */
 const timer_instance_t g_timer1 =
 { .p_ctrl = &g_timer1_ctrl, .p_cfg = &g_timer1_cfg, .p_api = &g_timer_on_gpt };
+TX_QUEUE datadisplay;
+static uint8_t queue_memory_datadisplay[20];
 extern bool g_ssp_common_initialized;
 extern uint32_t g_ssp_common_thread_count;
 extern TX_SEMAPHORE g_ssp_common_initialized_semaphore;
@@ -76,6 +78,13 @@ void pwm_thread_create(void)
     g_ssp_common_thread_count++;
 
     /* Initialize each kernel object. */
+    UINT err_datadisplay;
+    err_datadisplay = tx_queue_create (&datadisplay, (CHAR *) "datadisplay", 4, &queue_memory_datadisplay,
+                                       sizeof(queue_memory_datadisplay));
+    if (TX_SUCCESS != err_datadisplay)
+    {
+        tx_startup_err_callback (&datadisplay, 0);
+    }
 
     UINT err;
     err = tx_thread_create (&pwm_thread, (CHAR *) "pwm Thread", pwm_thread_func, (ULONG) NULL, &pwm_thread_stack, 1024,

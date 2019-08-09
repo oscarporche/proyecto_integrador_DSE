@@ -804,7 +804,7 @@ Synergy Configuration
       Channel: 0
       Mode: Periodic
       Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
-      Period Value: 10
+      Period Value: 100
       Period Unit: Milliseconds
       Duty Cycle Value: 50
       Duty Cycle Unit: Unit Raw Counts
@@ -813,8 +813,8 @@ Synergy Configuration
       GTIOCA Stop Level: Pin Level Low
       GTIOCB Output Enabled: False
       GTIOCB Stop Level: Pin Level Low
-      Callback: NULL
-      Overflow Interrupt Priority: Disabled
+      Callback: filter_adc
+      Overflow Interrupt Priority: Priority 6
       
     Object "adc Queue"
       Name: adc
@@ -838,7 +838,7 @@ Synergy Configuration
       Period Value: 1
       Period Unit: Milliseconds
       Duty Cycle Value: 50
-      Duty Cycle Unit: Unit Raw Counts
+      Duty Cycle Unit: Unit Percent X 1000
       Auto Start: True
       GTIOCA Output Enabled: True
       GTIOCA Stop Level: Pin Level Low
@@ -850,7 +850,7 @@ Synergy Configuration
     Instance "g_external_irq0 External IRQ Driver on r_icu"
       Name: g_external_irq0
       Channel: 0
-      Trigger: Falling
+      Trigger: Both Edges
       Digital Filtering: Enabled
       Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
       Interrupt enabled after initialization: True
@@ -862,10 +862,10 @@ Synergy Configuration
       Channel: 3
       Mode: Periodic
       Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
-      Period Value: 10
+      Period Value: 25
       Period Unit: Milliseconds
       Duty Cycle Value: 50
-      Duty Cycle Unit: Unit Raw Counts
+      Duty Cycle Unit: Unit Percent
       Auto Start: True
       GTIOCA Output Enabled: False
       GTIOCA Stop Level: Pin Level Low
@@ -874,6 +874,28 @@ Synergy Configuration
       Callback: RPMS
       Overflow Interrupt Priority: Priority 3
       
+    Object "datadisplay Queue"
+      Name: datadisplay
+      Symbol: datadisplay
+      Message Size (Words): 4
+      Queue Size (Bytes): 20
+      
+  Thread "CPU Load Counter Thread"
+    Symbol: cpu_load_counter_thread
+    Name: CPU Load Counter Thread
+    Stack size (bytes): 1024
+    Priority: 30
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+  Thread "CPU Load Thread"
+    Symbol: cpu_load_thread
+    Name: CPU Load Thread
+    Stack size (bytes): 1024
+    Priority: 1
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
   Messaging
     Subscriber "Main Thread" 0 0
       Event Class "Touch"
