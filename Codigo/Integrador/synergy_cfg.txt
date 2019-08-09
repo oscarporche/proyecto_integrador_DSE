@@ -123,7 +123,7 @@ Synergy Configuration
       P313 55 GLCDC0_LCD_TCON2 GLCD_Controller__Pin_Option_B_LCD_TCON2_B Medium - "Peripheral mode" CMOS None "BUS0: A20; GLCDC0: LCD_TCON2; SDHI0: DAT7" 
       P314 56 GLCDC0_LCD_TCON1 GLCD_Controller__Pin_Option_B_LCD_TCON1_B Medium - "Peripheral mode" CMOS None "BUS0: A21; GLCDC0: LCD_TCON1" 
       P315 57 GLCDC0_LCD_TCON0 GLCD_Controller__Pin_Option_B_LCD_TCON0_B Medium - "Peripheral mode" CMOS None "BUS0: A22; GLCDC0: LCD_TCON0" 
-      P400 1 GPIO GPIO10 - IRQ0 "Input mode" - None "ADC1: ADTRG; GPT6: GTIOCA; IIC0: SCL; IRQ0: IRQ00; SCI4: SCK; SCI7: SCK; SSI: AUDIO_CLK" 
+      P400 1 GPIO - - IRQ0 "Input mode" - "input pull-up" "ADC1: ADTRG; GPT6: GTIOCA; IIC0: SCL; IRQ0: IRQ00; SCI4: SCK; SCI7: SCK; SSI: AUDIO_CLK" 
       P401 2 CAN0_CTX CAN0_CTX0 - None "Peripheral mode" CMOS None "CAN0: CTX; ETHERC0: MDC; GPT6: GTIOCB; IIC0: SDA; IRQ0: IRQ05; POEG0: GTETRG; SCI4: CTS_RTS_SS; SCI7: SDA; SCI7: TXD_MOSI" 
       P402 3 CAN0_CRX CAN0_CRX0 Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; ETHERC0: MDIO; IRQ0: IRQ04; RTC0: RTCIC0; SCI7: RXD_MISO; SCI7: SCL" 
       P403 4 - - - - Disabled - - "AGT0: AGTIO; AGT1: AGTIO; ETHERC1: MDC; GPT3: GTIOCA; PDC0: PIXD7; RTC0: RTCIC1; SCI7: CTS_RTS_SS; SSI0: SSISCK" 
@@ -684,6 +684,23 @@ Synergy Configuration
         Callback (Only valid with Software start): NULL
         ELC Software Event Interrupt Priority: Disabled
         
+    Instance "g_timer2 Timer Driver on r_gpt"
+      Name: g_timer2
+      Channel: 2
+      Mode: Periodic
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 1
+      Period Unit: Seconds
+      Duty Cycle Value: 50
+      Duty Cycle Unit: Unit Raw Counts
+      Auto Start: True
+      GTIOCA Output Enabled: False
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: False
+      GTIOCB Stop Level: Pin Level Low
+      Callback: update_screen
+      Overflow Interrupt Priority: Priority 2
+      
     Object "g_main_semaphore_lcdc Semaphore"
       Name: Main Semaphore
       Symbol: g_main_semaphore_lcdc
@@ -787,7 +804,7 @@ Synergy Configuration
       Channel: 0
       Mode: Periodic
       Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
-      Period Value: 10
+      Period Value: 100
       Period Unit: Milliseconds
       Duty Cycle Value: 50
       Duty Cycle Unit: Unit Raw Counts
@@ -796,8 +813,8 @@ Synergy Configuration
       GTIOCA Stop Level: Pin Level Low
       GTIOCB Output Enabled: False
       GTIOCB Stop Level: Pin Level Low
-      Callback: NULL
-      Overflow Interrupt Priority: Disabled
+      Callback: filter_adc
+      Overflow Interrupt Priority: Priority 6
       
     Object "adc Queue"
       Name: adc
@@ -821,7 +838,7 @@ Synergy Configuration
       Period Value: 1
       Period Unit: Milliseconds
       Duty Cycle Value: 50
-      Duty Cycle Unit: Unit Raw Counts
+      Duty Cycle Unit: Unit Percent X 1000
       Auto Start: True
       GTIOCA Output Enabled: True
       GTIOCA Stop Level: Pin Level Low
@@ -830,6 +847,55 @@ Synergy Configuration
       Callback: NULL
       Overflow Interrupt Priority: Disabled
       
+    Instance "g_external_irq0 External IRQ Driver on r_icu"
+      Name: g_external_irq0
+      Channel: 0
+      Trigger: Both Edges
+      Digital Filtering: Enabled
+      Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
+      Interrupt enabled after initialization: True
+      Callback: pwr
+      Pin Interrupt Priority: Priority 4
+      
+    Instance "g_timer3 Timer Driver on r_gpt"
+      Name: g_timer3
+      Channel: 3
+      Mode: Periodic
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 25
+      Period Unit: Milliseconds
+      Duty Cycle Value: 50
+      Duty Cycle Unit: Unit Percent
+      Auto Start: True
+      GTIOCA Output Enabled: False
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: False
+      GTIOCB Stop Level: Pin Level Low
+      Callback: RPMS
+      Overflow Interrupt Priority: Priority 3
+      
+    Object "datadisplay Queue"
+      Name: datadisplay
+      Symbol: datadisplay
+      Message Size (Words): 4
+      Queue Size (Bytes): 20
+      
+  Thread "CPU Load Counter Thread"
+    Symbol: cpu_load_counter_thread
+    Name: CPU Load Counter Thread
+    Stack size (bytes): 1024
+    Priority: 30
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+  Thread "CPU Load Thread"
+    Symbol: cpu_load_thread
+    Name: CPU Load Thread
+    Stack size (bytes): 1024
+    Priority: 1
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
   Messaging
     Subscriber "Main Thread" 0 0
       Event Class "Touch"

@@ -6,7 +6,7 @@
 /*  site at www.expresslogic.com.                                              */
 /*                                                                             */
 /*  GUIX Studio Revision 5.4.2.9                                               */
-/*  Date (dd.mm.yyyy): 18. 7.2019   Time (hh:mm): 19:47                        */
+/*  Date (dd.mm.yyyy): 26. 7.2019   Time (hh:mm): 11:44                        */
 /*******************************************************************************/
 
 
@@ -342,7 +342,7 @@ GX_CONST GX_UBYTE display_1_SW_English[12] = "SW Version:";
 GX_CONST GX_UBYTE display_1_HW_English[12] = "HW Version:";
 GX_CONST GX_UBYTE display_1_CESEQ_English[22] = "CESEQ-C001/CESEQ-P001";
 GX_CONST GX_UBYTE display_1_PROGRAMADORES_English[15] = "Programadores:";
-GX_CONST GX_UBYTE display_1_NOMBRE1_English[15] = "Ponce, Oscar\r";
+GX_CONST GX_UBYTE display_1_NOMBRE1_English[16] = "Porche, Oscar\r";
 GX_CONST GX_UBYTE display_1_SETPOINTS_English[9] = "Setpoint";
 GX_CONST GX_UBYTE display_1_CONTROL_English[22] = "Control Vel. Motor CD";
 GX_CONST GX_UBYTE display_1_PORCENTAJE_English[2] = "%";

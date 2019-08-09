@@ -1,5 +1,6 @@
-src/mainTick.o: ../src/mainTick.c \
- C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/adc_tread.h \
+src/synergy_gen/cpu_load_counter_thread.o: \
+ ../src/synergy_gen/cpu_load_counter_thread.c \
+ ../src/synergy_gen/cpu_load_counter_thread.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\bsp/bsp_api.h \
  c:\users\tonat\e2_studio\workspace\integrador\synergy\ssp\inc\ssp_common_api.h \
  c:\users\tonat\e2_studio\workspace\integrador\synergy\ssp\inc\ssp_version.h \
@@ -50,8 +51,7 @@ src/mainTick.o: ../src/mainTick.c \
  c:\users\tonat\e2_studio\workspace\integrador\synergy\ssp\inc\framework\el\cm4_gcc\tx_port.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\framework\el/tx_user.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\framework\el/tx_cmsis.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/hal_data.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/common_data.h \
+ ../src/synergy_gen/hal_data.h ../src/synergy_gen/common_data.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_jpeg_decode.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_jpeg_decode_api.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_jpeg_decode_cfg.h \
@@ -79,17 +79,9 @@ src/mainTick.o: ../src/mainTick.c \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_cgc_api.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_elc.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_elc_cfg.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_gpt.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_timer_api.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_adc.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_adc_api.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_transfer_api.h \
- ../src/mainTick.h
+ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h
 
-C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/adc_tread.h:
+../src/synergy_gen/cpu_load_counter_thread.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\bsp/bsp_api.h:
 
@@ -191,9 +183,9 @@ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\framework\el/t
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\framework\el/tx_cmsis.h:
 
-C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/hal_data.h:
+../src/synergy_gen/hal_data.h:
 
-C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/common_data.h:
+../src/synergy_gen/common_data.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_jpeg_decode.h:
 
@@ -250,19 +242,3 @@ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_elc_cfg.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h:
-
-C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_gpt.h:
-
-C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_timer_api.h:
-
-C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_adc.h:
-
-C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h:
-
-C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_adc_api.h:
-
-C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h:
-
-C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_transfer_api.h:
-
-../src/mainTick.h:

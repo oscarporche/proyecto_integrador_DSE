@@ -5,25 +5,28 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/adc_tread_entry.c \
+../src/cpu_load_counter_thread_entry.c \
+../src/cpu_load_thread_entry.c \
 ../src/guiapp_event_handlers.c \
 ../src/hal_entry.c \
-../src/mainTick.c \
 ../src/main_thread_entry.c \
 ../src/pwm_thread_entry.c 
 
 OBJS += \
 ./src/adc_tread_entry.o \
+./src/cpu_load_counter_thread_entry.o \
+./src/cpu_load_thread_entry.o \
 ./src/guiapp_event_handlers.o \
 ./src/hal_entry.o \
-./src/mainTick.o \
 ./src/main_thread_entry.o \
 ./src/pwm_thread_entry.o 
 
 C_DEPS += \
 ./src/adc_tread_entry.d \
+./src/cpu_load_counter_thread_entry.d \
+./src/cpu_load_thread_entry.d \
 ./src/guiapp_event_handlers.d \
 ./src/hal_entry.d \
-./src/mainTick.d \
 ./src/main_thread_entry.d \
 ./src/pwm_thread_entry.d 
 

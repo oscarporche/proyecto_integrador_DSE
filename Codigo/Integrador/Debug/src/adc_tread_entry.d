@@ -86,8 +86,7 @@ src/adc_tread_entry.o: ../src/adc_tread_entry.c \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_adc_cfg.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_adc_api.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_transfer_api.h \
- ../src/mainTick.h
+ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_transfer_api.h
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/adc_tread.h:
 
@@ -264,5 +263,3 @@ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_adc_a
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_transfer_api.h:
-
-../src/mainTick.h:

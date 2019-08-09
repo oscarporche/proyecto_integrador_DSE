@@ -82,6 +82,8 @@ src/guiapp_event_handlers.o: ../src/guiapp_event_handlers.c \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_elc.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_elc_cfg.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h \
+ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_gpt.h \
+ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_timer_api.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_dtc.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_transfer_api.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h \
@@ -96,7 +98,8 @@ src/guiapp_event_handlers.o: ../src/guiapp_event_handlers.c \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_riic.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_riic_cfg.h \
  C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_i2c_api.h \
- C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\framework\instances/sf_touch_panel_i2c.h
+ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\framework\instances/sf_touch_panel_i2c.h \
+ C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/pwm_thread.h
 
 ../src/gui/guiapp_resources.h:
 
@@ -264,6 +267,10 @@ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_elc_c
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_elc_api.h:
 
+C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_gpt.h:
+
+C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_timer_api.h:
+
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\instances/r_dtc.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_transfer_api.h:
@@ -293,3 +300,5 @@ C:\Users\Tonat\e2_studio\workspace\Integrador\synergy_cfg\ssp_cfg\driver/r_riic_
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\driver\api/r_i2c_api.h:
 
 C:\Users\Tonat\e2_studio\workspace\Integrador\synergy\ssp\inc\framework\instances/sf_touch_panel_i2c.h:
+
+C:\Users\Tonat\e2_studio\workspace\Integrador\src\synergy_gen/pwm_thread.h:

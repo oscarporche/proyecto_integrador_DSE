@@ -225,7 +225,7 @@ static bool ssp_touch_to_guix(sf_touch_panel_payload_t * p_touch_payload, GX_EVE
 		gx_event->gx_event_payload.gx_event_pointdata.gx_point_x = p_touch_payload->x;
 
 #if defined(BSP_BOARD_S7G2_SK)
-		gx_event->gx_event_payload.gx_event_pointdata.gx_point_y = (320 - p_touch_payload->y);  // SK-S7G2
+		gx_event->gx_event_payload.gx_event_pointdata.gx_point_y = (short)((320) - p_touch_payload->y);  // SK-S7G2
 #else
 		gx_event->gx_event_payload.gx_event_pointdata.gx_point_y = p_touch_payload->y;  // DK-S7G2, PE-HMI1
 #endif

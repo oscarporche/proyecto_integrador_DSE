@@ -6,7 +6,7 @@
 /*  www.expresslogic.com.                                                      */
 /*                                                                             */
 /*  GUIX Studio Revision 5.4.2.9                                               */
-/*  Date (dd.mm.yyyy): 18. 7.2019   Time (hh:mm): 19:47                        */
+/*  Date (dd.mm.yyyy): 26. 7.2019   Time (hh:mm): 11:44                        */
 /*******************************************************************************/
 
 
@@ -26,18 +26,15 @@ extern   "C" {
 #define ID_HELLO 2
 #define ID_WINDOW2_TEXT 3
 #define ID_WINDOW1 4
-#define ID_BUTTONENABLER 5
-#define ID_INSTRUCTIONS 6
-#define ID_WINDOW1_TEXT 7
-#define ID_WINDOWCHANGER 8
-#define ID_WINDOW1_DUTY 9
-#define ID_WINDOW1_SPEED1 10
-#define ID_SW 11
-#define ID_HW 12
-#define ID_WINDOW1_NOMBRES 13
-#define ID_WINDOW1_PORCENTAJE 14
-#define ID_WINDOW1_SETPOINT 15
-#define ID_WINDOW1_SPEED 16
+#define ID_WINDOW1_TEXT 5
+#define ID_WINDOW1_DUTY 6
+#define ID_WINDOW1_SPEED1 7
+#define ID_SW 8
+#define ID_HW 9
+#define ID_WINDOW1_NOMBRES 10
+#define ID_WINDOW1_PORCENTAJE 11
+#define ID_WINDOW1_SETPOINT 12
+#define ID_WINDOW1_SPEED 13
 
 
 /* Define animation ids                                                        */
@@ -87,26 +84,6 @@ typedef struct
     GX_RESOURCE_ID font_id;
     GX_RESOURCE_ID normal_text_color_id;
     GX_RESOURCE_ID selected_text_color_id;
-} GX_TEXT_BUTTON_PROPERTIES;
-
-typedef struct
-{
-    GX_RESOURCE_ID string_id;
-    GX_RESOURCE_ID font_id;
-    GX_RESOURCE_ID normal_text_color_id;
-    GX_RESOURCE_ID selected_text_color_id;
-    GX_RESOURCE_ID unchecked_pixelmap_id;
-    GX_RESOURCE_ID checked_pixelmap_id;
-    GX_RESOURCE_ID unchecked_disabled_pixelmap_id;
-    GX_RESOURCE_ID checked_disabled_pixelmap_id;
-} GX_CHECKBOX_PROPERTIES;
-
-typedef struct
-{
-    GX_RESOURCE_ID string_id;
-    GX_RESOURCE_ID font_id;
-    GX_RESOURCE_ID normal_text_color_id;
-    GX_RESOURCE_ID selected_text_color_id;
 } GX_PROMPT_PROPERTIES;
 
 typedef struct
@@ -127,10 +104,6 @@ typedef struct WINDOW2_CONTROL_BLOCK_STRUCT
 typedef struct WINDOW1_CONTROL_BLOCK_STRUCT
 {
     GX_WINDOW_MEMBERS_DECLARE
-    GX_CHECKBOX window1_buttonenabler;
-    GX_PROMPT window1_instructions;
-    GX_PROMPT window1_window1_text;
-    GX_TEXT_BUTTON window1_windowchanger;
     GX_PROMPT window1_CONTROL;
     GX_PROMPT window1_NOMBRE_PROYECTO;
     GX_PROMPT window1_CONTROL_2;
@@ -247,8 +220,6 @@ typedef struct GX_STUDIO_DISPLAY_INFO_STRUCT
 
 /* Declare Studio-generated functions for creating top-level widgets           */
 
-UINT gx_studio_text_button_create(GX_CONST GX_STUDIO_WIDGET *info, GX_WIDGET *control_block, GX_WIDGET *parent);
-UINT gx_studio_checkbox_create(GX_CONST GX_STUDIO_WIDGET *info, GX_WIDGET *control_block, GX_WIDGET *parent);
 UINT gx_studio_prompt_create(GX_CONST GX_STUDIO_WIDGET *info, GX_WIDGET *control_block, GX_WIDGET *parent);
 UINT gx_studio_window_create(GX_CONST GX_STUDIO_WIDGET *info, GX_WIDGET *control_block, GX_WIDGET *parent);
 GX_WIDGET *gx_studio_widget_create(GX_BYTE *storage, GX_CONST GX_STUDIO_WIDGET *definition, GX_WIDGET *parent);
